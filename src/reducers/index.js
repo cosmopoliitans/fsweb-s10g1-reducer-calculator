@@ -3,12 +3,15 @@ import {
   APPLY_NUMBER,
   CHANGE_OPERATION,
   CLEAR_DISPLAY,
+  MPLUS,
+  MEMORYR,
+  MEMORYC,
 } from "./../actions";
 
 export const initialState = {
-  total: 100,
+  total: 0,
   operation: "+",
-  memory: 100,
+  memory: 0,
 };
 
 const calculateResult = (num1, num2, operation) => {
@@ -47,6 +50,21 @@ const reducer = (state, action) => {
       return {
         ...state,
         total: 0,
+      };
+    case MPLUS:
+      return {
+        ...state,
+        memory: state.total,
+      };
+    case MEMORYR:
+      return {
+        ...state,
+        total: state.memory,
+      };
+    case MEMORYC:
+      return {
+        ...state,
+        memory: 0,
       };
 
     default:

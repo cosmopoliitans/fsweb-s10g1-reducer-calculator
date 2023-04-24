@@ -8,6 +8,9 @@ import {
   APPLY_NUMBER,
   CHANGE_OPERATION,
   CLEAR_DISPLAY,
+  MPLUS,
+  MEMORYR,
+  MEMORYC,
 } from "./actions/index";
 
 function App() {
@@ -38,9 +41,18 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton
+                value={"M+"}
+                onClick={() => dispatch({ type: MPLUS })}
+              />
+              <CalcButton
+                value={"MR"}
+                onClick={() => dispatch({ type: MEMORYR })}
+              />
+              <CalcButton
+                value={"MC"}
+                onClick={() => dispatch({ type: MEMORYC })}
+              />
             </div>
 
             <div className="row">
